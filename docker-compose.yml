@@ -1,0 +1,52 @@
+version: '3' 
+networks:
+  micro-net:
+    driver: bridge
+volumes:
+  api-gateway-node-modules:
+  booking-service-node-modules:
+  flights-service-node-modules:
+  noti-service-node-modules:
+services:
+  api_gateway:
+    build: ./api-gateway
+    networks:
+      - micro-net
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api-gateway:/developer/nodejs/api-gateway
+      - api-gateway-node-modules:/developer/nodejs/api-gateway/node_modules
+  
+  booking_service:
+    build: ./booking
+    networks:
+      - micro-net
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./booking:/developer/nodejs/booking-service
+      - booking-service-node-modules:/developer/nodejs/booking-service/node_modules
+  
+  flights_service:
+    build: ./flights
+    networks:
+      - micro-net
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./flights:/developer/nodejs/flights-service
+      - flights-service-node-modules:/developer/nodejs/flights-service/node_modules
+
+  noti_service:
+    build: ./noti-service
+    networks:
+      - micro-net
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./noti-service:/developer/nodejs/noti-service
+      - noti-service-node-modules:/developer/nodejs/noti-service/node_modules
+  
+  # docker compose up -d 
+  # runs all containers in detached mode

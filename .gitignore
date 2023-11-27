@@ -1,0 +1,16 @@
+api-gateway/node_modules
+api-gateway/.env
+api-gateway/combined.log
+api-gateway/src/config/config.json
+booking/node_modules
+booking/.env
+booking/src/config/config.json
+booking/combined.log
+flights/node_modules
+flights/.env
+flights/src/config/config.json
+flights/combined.log
+noti-service/node_modules
+noti-service/.env
+noti-service/combined.log
+noti-service/src/config/config.json
