@@ -50,3 +50,9 @@ services:
   
   # docker compose up -d 
   # runs all containers in detached mode
+
+  # for running a single container
+  # e.g. -> docker run -it --init --name docker_service --network microservice-network -p 8000:8000 
+  #         -v"$(pwd)":/developer/nodejs/testing-docker 
+  #         -v testing-docker-node-modules:/developer/nodejs/testing-docker/node_modules testing-docker:latest
+
